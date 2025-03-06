@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 import MovieDisplay from './components/MovieDisplay'
 import Form from './components/Form'
 import './App.css'
-console.log(import.meta.env.VITE_OMDB_API_KEY)
+
 function App() {
   //API Key variable
 
@@ -15,7 +15,7 @@ function App() {
   //FUnction to get movies
   const getMovie=async(searchTerm)=>{
     try{
-      const response=await fetch(`http://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}`);
+      const response=await fetch(`https://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}`);
       // Parse JSON response into a JavaScript object
       const data = await response.json();
       // Set the Movie state to the received data
